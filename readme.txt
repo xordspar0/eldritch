@@ -1,3 +1,27 @@
+Updating Eldritch Reanimated to Build on Linux
+
+The original Eldritch Reanimated source code included IDE configuration for
+Visual Studio, Xcode, and Code::Blocks, but no cross-platform build
+configuration. I am updating the build system to make it practical to build on
+Linux, with the ultimate goal of running the game on a Raspberry Pi.
+
+Project status:
+
+- I used cbp2make to automatically translate the Code::Blocks project files to
+  a set of recursive GNU Makefiles. The build is quite slow. Even if no source
+  files have changed, one make instance needs to be started for each Makefile.
+  The Makefiles are also pretty hard to understand. But it works.
+- The code compiles unmodified. Yay!
+- I have successfully compiled it on a Raspberry Pi 3 model B. The Debug and
+  Release binaries exit before reaching the title screen with no indication
+  why in the logs. The Final binary makes it to the title screen, but it's
+  *very* slow. Pressing enter doesn't seem to do anything; I haven't gotten
+  past the title screen yet.
+
+The original readme.txt from the 2019-04-16 source code release is below.
+
+---
+
 Thanks for downloading this distribution of Eldritch's source code!
 
 Please note that this is an unsupported, unmaintained release;
